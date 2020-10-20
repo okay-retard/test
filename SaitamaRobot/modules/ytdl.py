@@ -192,7 +192,8 @@ async def yt_search(video_q):
             video_q,
             "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/uniborgConfig.py in github fork.`",
         )
-  elif
+        return(result)
+  elif                
     video_q = await edit_or_reply(video_q, "```Processing...```")
     full_response = await youtube_search(query)
     videos_json = full_response[1]
