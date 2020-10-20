@@ -47,7 +47,8 @@ async def is_register_admin(chat, user, client):
 
 @telethn.on(events.NewMessage(pattern="^/yt(audio|video) (.*)"))
 async def download_video(v_url):
- url = v_url.pattern_match.group(2)
+    
+    url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
     sed = v_url = await edit_or_reply(v_url, "`Preparing to download...`")
     if type == "audio":
