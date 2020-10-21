@@ -179,7 +179,8 @@ async def download_video(v_url):
         if catthumb:
             os.remove(catthumb)
         await sed.delete()
-
+                  
+YOUTUBE_API_KEY = "AIzaSyABkn6rhdDXiv7MYN0kYG8sd4jJ_PJdnZA"
 
 @telethn.on(events.NewMessage(pattern="^/yts (.*)"))
 #@bot.on(sudo_cmd(pattern="yts (.*)", allow_sudo=True))
