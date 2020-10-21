@@ -195,7 +195,7 @@ async def yt_search(video_q):
             )
         return result
     # elif                
-    video_q = await edit_or_reply(video_q, "```Processing...```")
+    video_q = await video_q.reply("```Processing...```")
     full_response = await youtube_search(query)
     videos_json = full_response[1]
     for video in videos_json:
