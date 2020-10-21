@@ -182,7 +182,7 @@ async def download_video(v_url):
                   
 YOUTUBE_API_KEY = "AIzaSyABkn6rhdDXiv7MYN0kYG8sd4jJ_PJdnZA"
 
-@telethn.on(events.NewMessage(pattern="^/yts (.*)"))
+@telethn.on(events.NewMessage(pattern="^/yt (.*)"))
 #@bot.on(sudo_cmd(pattern="yts (.*)", allow_sudo=True))
 async def yt_search(video_q):
     """ For .yts command, do a YouTube search from Telegram. """
