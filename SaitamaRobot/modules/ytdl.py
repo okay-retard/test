@@ -136,11 +136,11 @@ async def download_video(v_url):
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"
         )
-        await borg.send_file(
+        await telethn.send_file(
             sed.chat_id,
             f"{ytdl_data['id']}.mp3",
             supports_streaming=True,
-            thumb=catthumb,
+            #thumb=catthumb,
             attributes=[
                 DocumentAttributeAudio(
                     duration=int(ytdl_data["duration"]),
@@ -155,8 +155,8 @@ async def download_video(v_url):
             ),
         )
         os.remove(f"{ytdl_data['id']}.mp3")
-        if catthumb:
-            os.remove(catthumb)
+        #if catthumb:
+          #  os.remove(catthumb)
         await sed.delete()
     elif video:
         await sed.edit(
@@ -176,8 +176,8 @@ async def download_video(v_url):
             ),
         )
         os.remove(f"{ytdl_data['id']}.mp4")
-        if catthumb:
-            os.remove(catthumb)
+        #if catthumb:
+         #   os.remove(catthumb)
         await sed.delete()
                   
 YOUTUBE_API_KEY = "AIzaSyABkn6rhdDXiv7MYN0kYG8sd4jJ_PJdnZA"
