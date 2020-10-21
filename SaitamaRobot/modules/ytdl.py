@@ -188,7 +188,7 @@ async def yt_search(video_q):
     """ For .yts command, do a YouTube search from Telegram. """
     query = video_q.pattern_match.group(1)
     result = ""
-    if not Config.YOUTUBE_API_KEY:
+    if not YOUTUBE_API_KEY:
         await edit_or_reply(
                 video_q,
                 "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/uniborgConfig.py in github fork.`",
