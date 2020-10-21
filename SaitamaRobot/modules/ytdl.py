@@ -125,11 +125,11 @@ async def download_video(v_url):
         await sed.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
-    catthumb = Path(f"{ytdl_data['id']}.jpg")
-    if not os.path.exists(catthumb):
-        catthumb = Path(f"{ytdl_data['id']}.webp")
-    elif not os.path.exists(catthumb):
-        catthumb = None
+    #catthumb = Path(f"{ytdl_data['id']}.jpg")
+    #if not os.path.exists(catthumb):
+        #catthumb = Path(f"{ytdl_data['id']}.webp")
+    #elif not os.path.exists(catthumb):
+        #catthumb = None
     if song:
         await sed.edit(
             f"`Preparing to upload song:`\
