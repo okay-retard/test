@@ -21,7 +21,7 @@ class Config(object):
     OWNER_ID = 792109647  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "Sawada"
     SUPPORT_CHAT = 'OnePunchSupport'  #Your own group for support, do not add the @
-    YOUTUBE_API_KEY = "awoo"
+    YOUTUBE_API_KEY = "AIzaSyABkn6rhdDXiv7MYN0kYG8sd4jJ_PJdnZA"
     #RECOMMENDED
 
     SQLALCHEMY_DATABASE_URI = 'something://somewhat:user@hosturl:port/databasename'  # needed for any database modules
