@@ -160,7 +160,7 @@ async def download_video(v_url):
         await sed.delete()
     elif video:
         await sed.edit(
-            f,write-auto-sub"`Preparing to upload video:`\
+            f"`Preparing to upload video:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"
         )
