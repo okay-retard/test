@@ -157,8 +157,7 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp3")
         #if catthumb:
           #  os.remove(catthumb)
-        await sed.delete()
-        await event.delete()          
+        await sed.delete()          
     elif video:
         await sed.edit(
             f"`Preparing to upload video:`\
@@ -252,7 +251,7 @@ async def _(event):
         return
     await event.edit("Processing...") 
     await event.reply("`Fetching data, please wait..`")
-    os.system(f"youtube-dl -x --audio-format mp3 --add-metadata --embed-thumbnai 'ytsearch:{song}'")
+    os.system(f"youtube-dl -x --audio-format mp3 --add-metadata --embed-thumbnail 'ytsearch:{song}'")
     l = glob.glob("*.mp3")
     if not l:
         await event.edit("`Song not found`")
