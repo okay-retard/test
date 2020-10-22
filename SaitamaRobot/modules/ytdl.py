@@ -158,6 +158,7 @@ async def download_video(v_url):
         #if catthumb:
           #  os.remove(catthumb)
         await sed.delete()
+        await event.delete()          
     elif video:
         await sed.edit(
             f"`Preparing to upload video:`\
