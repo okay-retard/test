@@ -27,7 +27,7 @@ wikipedia
 telethon
 spamwatch
 alphabet_detector
-youtube-dl
+youtube_dl>=2020.09.20
 tswift
 gTTS
 google-api-python-client
