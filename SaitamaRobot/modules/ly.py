@@ -8,6 +8,8 @@ import lyricsgenius
 from tswift import Song
 from SaitamaRobot import telethn
 
+from telethon import types, event
+
 #from telebot import CMD_HELP
 #from telebot.utils import admin_cmd
 
