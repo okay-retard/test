@@ -8,7 +8,7 @@ import lyricsgenius
 from tswift import Song
 from SaitamaRobot import telethn
 
-from telethon import types, event
+from telethon import types, events
 
 #from telebot import CMD_HELP
 #from telebot.utils import admin_cmd
@@ -16,20 +16,20 @@ from telethon import types, event
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
-@telethn.on(event.NewMessage(pattern="^/lyrics (.*)"))
+@telethn.on(events.NewMessage(pattern="^/lyrics (.*)"))
 #@telebot.on(sudo_cmd(allow_sudo=True, pattern="lyrics ?(.*)"))
-async def _(event):
-    await eor(event, "wi8..! I am searching your lyrics....`")
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
-    reply = await event.get_reply_message()
-    if event.pattern_match.group(1):
-        query = event.pattern_match.group(1)
+async def _(events):
+    await eor(events, "wi8..! I am searching your lyrics....`")
+    reply_to_id = events.message.id
+    if events.reply_to_msg_id:
+        reply_to_id = events.reply_to_msg_id
+    reply = await events.get_reply_message()
+    if events.pattern_match.group(1):
+        query = events.pattern_match.group(1)
     elif reply.text:
         query = reply.message
     else:
-        await eor(event, "`What I am Supposed to find `")
+        await eor(events, "`What I am Supposed to find `")
         return
     song = ""
     song = Song.find_song(query)
@@ -44,19 +44,19 @@ async def _(event):
         with io.BytesIO(str.encode(reply)) as out_file:
             out_file.name = "lyrics.text"
             await borg.send_file(
-                event.chat_id,
+                events.chat_id,
                 out_file,
                 force_document=True,
                 allow_cache=False,
                 caption=query,
                 reply_to=reply_to_id,
             )
-            await event.delete()
+            await events.delete()
     else:
-        await eor(event, reply)
+        await eor(events, reply)
 
 
-@telethn.on(event.NewMessage(pattern="^/glyrics (.*)"))
+@telethn.on(events.NewMessage(pattern="^/glyrics (.*)"))
 #@telebot.on(sudo_cmd(outgoing=True, pattern="glyrics ?(.*)", allow_sudo=True))
 async def lyrics(lyric):
     if lyric.pattern_match.group(1):
