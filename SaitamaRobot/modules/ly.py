@@ -6,7 +6,7 @@ import os
 
 import lyricsgenius
 from tswift import Song
-from telethn import types
+from telethon import types
 
 #from telebot import CMD_HELP
 #from telebot.utils import admin_cmd
