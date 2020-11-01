@@ -1,4 +1,4 @@
-from tswift import song
+from tswift import Song
 import lyricsgenius 
 #from SaitamaRobot import Bot,Update,Message,Chat
 #from telegram.ext import run_async, CommandHandler, CallbackContext
