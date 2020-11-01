@@ -14,7 +14,7 @@ from SaitamaRobot import telethn
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
-@telethn.on(events.NewMessage(pattern="^/lyrics (.*)"))
+@telethn.on(event.NewMessage(pattern="^/lyrics (.*)"))
 #@telebot.on(sudo_cmd(allow_sudo=True, pattern="lyrics ?(.*)"))
 async def _(event):
     await eor(event, "wi8..! I am searching your lyrics....`")
@@ -54,7 +54,7 @@ async def _(event):
         await eor(event, reply)
 
 
-@telethn.on(events.NewMessage(pattern="^/glyrics (.*)"))
+@telethn.on(event.NewMessage(pattern="^/glyrics (.*)"))
 #@telebot.on(sudo_cmd(outgoing=True, pattern="glyrics ?(.*)", allow_sudo=True))
 async def lyrics(lyric):
     if lyric.pattern_match.group(1):
