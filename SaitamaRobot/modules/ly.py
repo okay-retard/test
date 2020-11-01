@@ -8,7 +8,7 @@ import lyricsgenius
 from tswift import Song
 from SaitamaRobot import telethn
 
-from SaitamaRobot import edit_or_reply as eor
+from SaitamaRobot import edit_or_reply
 from telethon import types, events
 
 #from telebot import CMD_HELP
@@ -20,7 +20,7 @@ GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 @telethn.on(events.NewMessage(pattern="^/lyrics (.*)"))
 #@telebot.on(sudo_cmd(allow_sudo=True, pattern="lyrics ?(.*)"))
 async def _(events):
-    await eor(events, "wi8..! I am searching your lyrics....`")
+    await edit_or_reply(events, "wi8..! I am searching your lyrics....`")
     reply_to_id = events.message.id
     if events.reply_to_msg_id:
         reply_to_id = events.reply_to_msg_id
@@ -30,7 +30,7 @@ async def _(events):
     elif reply.text:
         query = reply.message
     else:
-        await eor(events, "`What I am Supposed to find `")
+        await edit_or_reply(events, "`What I am Supposed to find `")
         return
     song = ""
     song = Song.find_song(query)
@@ -54,7 +54,7 @@ async def _(events):
             )
             await events.delete()
     else:
-        await eor(events, reply)
+        await edit_or_reply(events, reply)
 
 
 @telethn.on(events.NewMessage(pattern="^/glyrics (.*)"))
