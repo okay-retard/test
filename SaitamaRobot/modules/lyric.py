@@ -4,6 +4,7 @@ import lyricsgenius
 #from SaitamaRobot import Bot,Update,Message,Chat
 #from telegram.ext import run_async, CommandHandler, CallbackContext
 from telethon import types, events
+from SaitamaRobot import telethn
 
 #from SaitamaRobot import dispatcher
 
