@@ -10,13 +10,19 @@ from SaitamaRobot import telethn
 
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
-
+def get_arg(message):
+    msg = message.raw_text
+    msg = msg.replace(" ", "", 1) if msg[1] == " " else msg
+    split = msg[1:].replace("\n", " \n").split(" ")
+    if " ".join(split[1:]).strip() == "":
+        return ""
+    return " ".join(split[1:])
 
 @telethn.on(events.NewMessage(pattern="/glyric"))
 #@telethn.on(events.NewMessage(pattern="^/glyrics (.*)"))
 async def lyrics(lyric):
-    if lyric.pattern_match.group(1):
-        query = lyric.pattern_match.group(1)
+    if get_arg(lyric):
+        query = get_arg(lyric)
     else:
         await lyric.edit(
             "Error: please use '-' as divider for <artist> and <song> \neg: `.glyrics Nicki Minaj - Super Bass`"
