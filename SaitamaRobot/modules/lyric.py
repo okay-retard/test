@@ -12,7 +12,8 @@ GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
 
-@telethn.on(events.NewMessage(pattern="^/glyrics (.*)"))
+@telethn.on(events.NewMessage(pattern="/glyric"))
+#@telethn.on(events.NewMessage(pattern="^/glyrics (.*)"))
 async def lyrics(lyric):
     if lyric.pattern_match.group(1):
         query = lyric.pattern_match.group(1)
