@@ -8,6 +8,7 @@ import lyricsgenius
 from tswift import Song
 from SaitamaRobot import telethn
 
+From SaitamaRobot import edit_or_reply as eor
 from telethon import types, events
 
 #from telebot import CMD_HELP
