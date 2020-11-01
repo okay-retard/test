@@ -68,6 +68,6 @@ async def lyrics(lyric):
         
    __help__ = """
 *lyric*
- 
+ """
 __mod_name__ = "lyric"
     
