@@ -66,8 +66,10 @@ async def lyrics(lyric):
         )
         
         
-   __help__ = """
-*lyric*
- """
+__help__ = """
+*lund hai bc*
+ x /glyrics <text>: perform a youtube search
+ 
+ 
+"""
 __mod_name__ = "lyric"
-    
