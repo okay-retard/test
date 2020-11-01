@@ -6,7 +6,7 @@ import os
 
 import lyricsgenius
 from tswift import Song
-from telethon import types
+from SaitamaRobot import telethn
 
 #from telebot import CMD_HELP
 #from telebot.utils import admin_cmd
@@ -14,7 +14,7 @@ from telethon import types
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
-@telethon.on(events.NewMessage(pattern="^/lyrics (.*)"))
+@telethn.on(events.NewMessage(pattern="^/lyrics (.*)"))
 #@telebot.on(sudo_cmd(allow_sudo=True, pattern="lyrics ?(.*)"))
 async def _(event):
     await eor(event, "wi8..! I am searching your lyrics....`")
@@ -54,7 +54,7 @@ async def _(event):
         await eor(event, reply)
 
 
-@telethon.on(events.NewMessage(pattern="^/glyrics (.*)"))
+@telethn.on(events.NewMessage(pattern="^/glyrics (.*)"))
 #@telebot.on(sudo_cmd(outgoing=True, pattern="glyrics ?(.*)", allow_sudo=True))
 async def lyrics(lyric):
     if lyric.pattern_match.group(1):
